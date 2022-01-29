@@ -97,7 +97,7 @@ formEl.on('submit', handleFormSubmit);
 function handleCityName(cityName){
     console.log("Name of city submitted is " + cityName);
 
-    var geolocatorRequestURL = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&appid=93f009b07cdf38e8e5c9ff73cea6126b';
+    var geolocatorRequestURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&appid=93f009b07cdf38e8e5c9ff73cea6126b';
     fetch(geolocatorRequestURL)
     .then(function (response) {
         return response.text();
@@ -112,7 +112,7 @@ function handleCityName(cityName){
         console.log("latt is " + lattitude);
         console.log("long is " + longitude);
 
-        var weatherRequestURL = 'http://api.openweathermap.org/data/2.5/onecall?lat='+lattitude+'&lon='+longitude+'&exclude=hourly,daily,alerts,minutely&units=metric&appid=93f009b07cdf38e8e5c9ff73cea6126b';
+        var weatherRequestURL = 'https://api.openweathermap.org/data/2.5/onecall?lat='+lattitude+'&lon='+longitude+'&exclude=hourly,daily,alerts,minutely&units=metric&appid=93f009b07cdf38e8e5c9ff73cea6126b';
         fetch(weatherRequestURL)
         .then (function(response){
             return response.json();
