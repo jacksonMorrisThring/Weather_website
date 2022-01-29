@@ -1,0 +1,35 @@
+/* custom css */
+.cstm_main {
+    position: relative;
+    left: 20%;
+
+
+}
+
+.cstm-sidebar{
+    display: flex;
+    justify-content: start;
+    width: 30%;
+    position: absolute;
+    top: 10%;
+    left: 0;
+}
+
+.cstm-card{
+    display: flex;
+    justify-content: end;
+    position: relative; 
+    right: 20px;
+
+
+
+
+}
+
+.cstm-search{
+    display:flex;
+    position: relative;
+    left: 0;
+    width: 30%;     
+}
+
