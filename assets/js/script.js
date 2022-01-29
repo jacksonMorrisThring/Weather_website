@@ -144,7 +144,6 @@ function handleCityName(cityName){
                     console.log("data from daily[0].temp.day is");
                     console.log(data.daily[0].temp.day);
 
-                    var weather7Day = data.daily;
                     
                     dateOneEl.text(moment().format('MMMM Do YYYY'));
                     cardOneTempEl.text("Temp: " +data.daily[0].temp.day + " C");
