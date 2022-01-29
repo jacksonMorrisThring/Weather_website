@@ -64,18 +64,18 @@ function handleFormSubmit(event){
         cities[index] = cityName;
         index++;
         // cities.push(cityName);
-        console.log("local storage for cities is empty");
+        // console.log("local storage for cities is empty");
         localStorage.setItem("cities", JSON.stringify(cities));
         localStorage.setItem("index", JSON.stringify(index));
     }
 
     else{
         index = JSON.parse(localStorage.getItem("index"));
-        console.log("local storage for cities is not empty");
+        // console.log("local storage for cities is not empty");
         cities = JSON.parse(localStorage.getItem("cities"));
-        console.log("cities[index] takes value " + cities[index]);
-        // cityName = cities[index];
-        console.log("adding in new city to array " + cityName);
+        // console.log("cities[index] takes value " + cities[index]);
+        // // cityName = cities[index];
+        // console.log("adding in new city to array " + cityName);
         cities[index] = cityName;
         index++;
         localStorage.setItem("cities", JSON.stringify(cities));
@@ -95,9 +95,9 @@ function handleFormSubmit(event){
 formEl.on('submit', handleFormSubmit);
 
 function handleCityName(cityName){
-    console.log("Name of city submitted is " + cityName);
+    // console.log("Name of city submitted is " + cityName);
 
-    var geolocatorRequestURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&appid=93f009b07cdf38e8e5c9ff73cea6126b';
+    var geolocatorRequestURL = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&appid=93f009b07cdf38e8e5c9ff73cea6126b';
     fetch(geolocatorRequestURL)
     .then(function (response) {
         return response.text();
@@ -106,23 +106,24 @@ function handleCityName(cityName){
 
         data = JSON.parse(data);
         var lattLong = data[0];
+        console.log("lattLong is " + lattLong);
 
         var lattitude = lattLong.lat;
         var longitude = lattLong.lon;
         console.log("latt is " + lattitude);
         console.log("long is " + longitude);
 
-        var weatherRequestURL = 'https://api.openweathermap.org/data/2.5/onecall?lat='+lattitude+'&lon='+longitude+'&exclude=hourly,daily,alerts,minutely&units=metric&appid=93f009b07cdf38e8e5c9ff73cea6126b';
+        var weatherRequestURL = 'http://api.openweathermap.org/data/2.5/onecall?lat='+lattitude+'&lon='+longitude+'&exclude=hourly,daily,alerts,minutely&units=metric&appid=93f009b07cdf38e8e5c9ff73cea6126b';
         fetch(weatherRequestURL)
         .then (function(response){
             return response.json();
         })
         .then(function(data){
-            console.log(data);
-            console.log("temp is " + data.current.temp + " C");
-            console.log("wind is " + data.current.wind_speed + " KM/H");
-            console.log("humidity is " + data.current.humidity +"%");
-            console.log("UV index is " + data.current.uvi);
+            // console.log(data);
+            // console.log("temp is " + data.current.temp + " C");
+            // console.log("wind is " + data.current.wind_speed + " KM/H");
+            // console.log("humidity is " + data.current.humidity +"%");
+            // console.log("UV index is " + data.current.uvi);
 
             todaysTempEl.text("Temperature: " + data.current.temp + " degrees Celcius");
             todaysWindEl.text("Wind speed: " + data.current.wind_speed + " km/h");
@@ -145,7 +146,7 @@ function handleCityName(cityName){
                     console.log(data.daily[0].temp.day);
 
                     
-                    dateOneEl.text(moment().format('MMMM Do YYYY'));
+                    dateOneEl.text(moment("29/1/2022", "D/M/YYYY").format('MMMM Do YYYY'));
                     cardOneTempEl.text("Temp: " +data.daily[0].temp.day + " C");
                     cardOneWindEl.text("Wind: " +data.daily[0].wind_speed + " kph");
                     cardOneHumidEl.text("Humidity: " +data.daily[0].humidity + "%");
