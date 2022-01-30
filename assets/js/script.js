@@ -146,31 +146,31 @@ function handleCityName(cityName){
                     console.log(data.daily[0].temp.day);
 
                     
-                    dateOneEl.text(moment("29/1/2022", "D/M/YYYY").format('MMMM Do YYYY'));
+                    dateOneEl.text(moment("30/1/2022", "D/M/YYYY").format('MMMM Do YYYY'));
                     cardOneTempEl.text("Temp: " +data.daily[0].temp.day + " C");
                     cardOneWindEl.text("Wind: " +data.daily[0].wind_speed + " kph");
                     cardOneHumidEl.text("Humidity: " +data.daily[0].humidity + "%");
                     cardOneUVEl.text("UV: " +data.daily[0].uvi);
 
-                    dateTwoEl.text(moment("30/1/2022", "D/M/YYYY").format('MMMM Do YYYY'));
+                    dateTwoEl.text(moment("31/1/2022", "D/M/YYYY").format('MMMM Do YYYY'));
                     cardTwoTempEl.text("Temp: " +data.daily[1].temp.day + " C");
                     cardTwoWindEl.text("Wind: " +data.daily[1].wind_speed + " kph");
                     cardTwoHumidEl.text("Humidity: " +data.daily[1].humidity + "%");
                     cardTwoUVEl.text("UV: " +data.daily[1].uvi);
 
-                    dateThreeEl.text(moment("31/1/2022", "D/M/YYYY").format('MMMM Do YYYY'));
+                    dateThreeEl.text(moment("1/2/2022", "D/M/YYYY").format('MMMM Do YYYY'));
                     cardThreeTempEl.text("Temp: " +data.daily[2].temp.day + " C");
                     cardThreeWindEl.text("Wind: " +data.daily[2].wind_speed + " kph");
                     cardThreeHumidEl.text("Humidity: " +data.daily[2].humidity + "%");
                     cardThreeUVEl.text("UV: " +data.daily[2].uvi);
 
-                    dateFourEl.text(moment("1/2/2022", "D/M/YYYY").format('MMMM Do YYYY'));
+                    dateFourEl.text(moment("2/2/2022", "D/M/YYYY").format('MMMM Do YYYY'));
                     cardFourTempEl.text("Temp: " +data.daily[3].temp.day + " C");
                     cardFourWindEl.text("Wind: " +data.daily[3].wind_speed + " kph");
                     cardFourHumidEl.text("Humidity: " +data.daily[3].humidity + "%");
                     cardFourUVEl.text("UV: " +data.daily[3].uvi);
 
-                    dateFiveEl.text(moment("2/2/2022", "D/M/YYYY").format('MMMM Do YYYY'));
+                    dateFiveEl.text(moment("3/2/2022", "D/M/YYYY").format('MMMM Do YYYY'));
                     cardFiveTempEl.text("Temp: " +data.daily[4].temp.day + " C");
                     cardFiveWindEl.text("Wind: " +data.daily[4].wind_speed + " kph");
                     cardFiveHumidEl.text("Humidity: " +data.daily[4].humidity + "%");
